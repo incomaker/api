@@ -3,7 +3,7 @@
 namespace Incomaker\Api\Data;
 
 /**
- * Cookies from INCOMAKER tracking system
+ * Cookies from Incomaker tracking system
  */
 class TrackingCookies {
 
