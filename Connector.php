@@ -11,7 +11,7 @@ use Incomaker\Api\Controller\PluginController;
 use Incomaker\Api\Controller\ProductsController;
 use Incomaker\Api\Controller\SegmentController;
 
-class Core {
+class Connector {
 
     const INCOMAKER_API_KEY = "INCOMAKER_API_KEY";
     const INCOMAKER_ACCOUNT_ID = "INCOMAKER_ACCOUNT_ID";
@@ -20,24 +20,17 @@ class Core {
 
     /**
      * Incomaker API endpoint
-     * @version 2.1.0
+     * @version 2.2.0
      *
      * @var string
      */
     private static $server = "https://api.incomaker.com/commons/v2/";
     private static $tracking = "https://dg.incomaker.com/tracking/resources/js/INlib.js";
 
-    /**
-     * @var IncomakerDriver
-     */
     protected $driver;
 
-    function __construct($driver) {
+    function __construct(\Incomaker\Api\DriverInterface $driver) {
         $this->driver = $driver;
-        $apiKey = $this->driver->getSetting(self::INCOMAKER_API_KEY);
-        if (!empty($apiKey)) {
-            $this->driver->updateSetting(self::INCOMAKER_API_KEY, $apiKey);
-        }
     }
 
     public function createContactController() {
