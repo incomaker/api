@@ -1,5 +1,4 @@
 <?php
-
 namespace Incomaker\Api;
 
 use Incomaker\Api\Controller\ContactController;
@@ -29,7 +28,7 @@ class Connector {
 
     protected $driver;
 
-    function __construct(\Incomaker\Api\DriverInterface $driver) {
+    function __construct(DriverInterface $driver) {
         $this->driver = $driver;
     }
 

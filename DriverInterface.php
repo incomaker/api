@@ -1,8 +1,5 @@
 <?php
-
-
 namespace Incomaker\Api;
-
 
 interface DriverInterface
 {
