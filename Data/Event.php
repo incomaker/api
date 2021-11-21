@@ -20,12 +20,12 @@ class Event {
 
     /**
      * Create generic object
-     * @param type $name custom event name
-     * @param type $permId //cookie incomaker_p
+     * @param $name event name
+     * @param $permId //cookie incomaker_p
      */
-    function __construct($name, $permId) {
+    function __construct($name, $permId = null) {
         $this->name = $name;
-        $this->permId = $permId;
+        if ($permId != null) $this->permId = $permId;
     }
 
     public function getData() {
@@ -64,8 +64,8 @@ class Event {
     /**
      * Add or edit new custom field
      *
-     * @param type $index
-     * @param type $value
+     * @param $index
+     * @param $value
      */
     public function addCustomField($index, $value) {
         $this->customField[$index] = $value;
@@ -74,7 +74,7 @@ class Event {
     /**
      * Unset custom field
      *
-     * @param type $index
+     * @param $index
      */
     public function deleteCustomField($index) {
         unset($this->customField[$index]);
