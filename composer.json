@@ -1,7 +1,6 @@
 {
     "name": "incomaker/api",
     "description": "Incomaker API library",
-    "version": "2.2.0",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
@@ -9,7 +8,9 @@
             "email": "support@incomaker.com"
         }
     ],
-    "require": {},
+    "require": {
+        "ext-json": "*"
+    },
     "autoload": {
         "psr-4": {
             "Incomaker\\Api\\": ""

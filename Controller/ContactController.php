@@ -12,7 +12,7 @@ class ContactController extends Controller {
 
     /**
      * 
-     * @param type $productId
+     * @param $productId
      * @return Contact
      */
     public function createContactObject($clientContactId) {
@@ -33,7 +33,7 @@ class ContactController extends Controller {
      * Supports batch job.
      * 
      * @param string $data
-     * @param long $requestId
+     * @param $requestId
      * @return string
      */
     public function addContacts(Contacts $data, $requestId = 0) {
@@ -44,7 +44,7 @@ class ContactController extends Controller {
      * Adds one contact
      * 
      * @param Contact $contactObject
-     * @return type
+     * @return
      */
     public function addContact(Contact $contactObject) {
         return $this->curlPostQuery("contact/", "", $contactObject->getData());
@@ -61,7 +61,12 @@ class ContactController extends Controller {
      * @return string
      */
     public function getContact($contactId = null, $clientContactId = null, $personalId = null, $email = null, $phoneNumber1 = null) {
-        return $this->curlGetQuery("contact/", "?contactId=" . urlencode($contactId) . "?clientContactId=" . urlencode($clientContactId) . "?personalId=" . urlencode($personalId) . "?email=" . urlencode($email) . "?phoneNumber1=" . urlencode($phoneNumber1));
+        return $this->curlGetQuery("contact/",
+            "?contactId=" . urlencode($contactId) .
+            "&clientContactId=" . urlencode($clientContactId) .
+            "&personalId=" . urlencode($personalId) .
+            "&email=" . urlencode($email) .
+            "&phoneNumber1=" . urlencode($phoneNumber1));
     }
 
     /**
@@ -77,7 +82,7 @@ class ContactController extends Controller {
      * Updates contact
      * 
      * @param Contact $contactObject
-     * @return response
+     * @return
      */
     public function updateContact(Contact $contactObject) {
         return $this->curlPutQuery("contact/", "", $contactObject->getData());
