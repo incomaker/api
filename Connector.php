@@ -4,11 +4,11 @@ namespace Incomaker\Api;
 use Incomaker\Api\Controller\ContactController;
 use Incomaker\Api\Controller\CategoryController;
 use Incomaker\Api\Controller\EventController;
-use Incomaker\Api\Controller\ImagesController;
 use Incomaker\Api\Controller\OrderController;
 use Incomaker\Api\Controller\PluginController;
-use Incomaker\Api\Controller\ProductsController;
 use Incomaker\Api\Controller\SegmentController;
+use Incomaker\Api\Controller\ImageController;
+use Incomaker\Api\Controller\ProductController;
 
 class Connector {
 
@@ -23,7 +23,7 @@ class Connector {
      *
      * @var string
      */
-    private static $server = "https://api.incomaker.com/commons/v2/";
+    private static $server = "https://api.incomaker.com/commons/v3/";
     private static $tracking = "https://dg.incomaker.com/tracking/resources/js/INlib.js";
 
     protected $driver;

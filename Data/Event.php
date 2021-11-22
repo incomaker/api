@@ -41,7 +41,7 @@ class Event {
             $arrayData["clientEventId"] = strval($this->clientEventId);
         }
         if (!is_null($this->contactId)) {
-            $arrayData["clientContactId"] = strval($this->contactId);
+            $arrayData["contactId"] = strval($this->contactId);
         }
         if (!is_null($this->relatedId)) {
             $arrayData["relatedId"] = strval($this->relatedId);
