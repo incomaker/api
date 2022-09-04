@@ -11,7 +11,7 @@ class Event {
     private $sessionId;
     private $campaignId;
     private $clientEventId;
-    private $contactId;
+    private $clientContactId;
     private $relatedId;
     private $eventType;
     private $name;
@@ -40,8 +40,8 @@ class Event {
         if (!is_null($this->clientEventId)) {
             $arrayData["clientEventId"] = strval($this->clientEventId);
         }
-        if (!is_null($this->contactId)) {
-            $arrayData["contactId"] = strval($this->contactId);
+        if (!is_null($this->clientContactId)) {
+            $arrayData["clientContactId"] = strval($this->clientContactId);
         }
         if (!is_null($this->relatedId)) {
             $arrayData["relatedId"] = strval($this->relatedId);
@@ -96,8 +96,8 @@ class Event {
         return $this->clientEventId;
     }
 
-    function getContactId() {
-        return $this->contactId;
+    function getClientContactId() {
+        return $this->clientContactId;
     }
 
     function getRelatedId() {
@@ -136,8 +136,8 @@ class Event {
         $this->clientEventId = $clientEventId;
     }
 
-    function setContactId($contactId) {
-        $this->contactId = $contactId;
+    function setClientContactId($clientContactId) {
+        $this->clientContactId = $clientContactId;
     }
 
     function setRelatedId($relatedId) {
