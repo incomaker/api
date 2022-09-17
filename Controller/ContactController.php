@@ -85,7 +85,7 @@ class ContactController extends Controller {
      * @return
      */
     public function updateContact(Contact $contactObject) {
-        return $this->curlPutQuery("contact/", "", $contactObject->getData());
+        return $this->curlPostQuery("contact/", "", $contactObject->getData());
     }
 
     /**
