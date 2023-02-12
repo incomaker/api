@@ -16,6 +16,7 @@ class Event {
     private $eventType;
     private $name;
     private $time;
+    private $email;
     private $customField = array();
 
     /**
@@ -55,7 +56,10 @@ class Event {
         if (!is_null($this->sessionId)) {
             $arrayData["sessionId"] = strval($this->sessionId);
         }
-        if (!empty($this->customField)) {
+        if (!is_null($this->email)) {
+            $arrayData["email"] = strval($this->email);
+        }
+        if (!is_null($this->customField)) {
             $arrayData["customField"] = $this->customField;
         }
         return json_encode($arrayData);
@@ -116,6 +120,11 @@ class Event {
         return $this->time;
     }
 
+    function getEmail()
+    {
+        return $this->email;
+    }
+
     function getCustomField() {
         return $this->customField;
     }
@@ -154,6 +163,11 @@ class Event {
 
     function setTime($time) {
         $this->time = $time;
+    }
+
+    function setEmail($email)
+    {
+        $this->email = $email;
     }
 
     function setCustomField($customField) {
