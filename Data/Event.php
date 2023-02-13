@@ -59,7 +59,7 @@ class Event {
         if (!is_null($this->email)) {
             $arrayData["email"] = strval($this->email);
         }
-        if (!is_null($this->customField)) {
+        if (!empty($this->customField)) {
             $arrayData["customField"] = $this->customField;
         }
         return json_encode($arrayData);
