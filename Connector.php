@@ -23,7 +23,7 @@ class Connector {
      *
      * @var string
      */
-    private static $server = "https://api.incomaker.com/commons/v3/";
+    private static $server = "https://api.incomaker.com/commons/v3/"; //https://test1.incomaker.com:8443/commons/v3/
     private static $tracking = "https://dg.incomaker.com/tracking/resources/js/INlib.js";
 
     protected $driver;
