@@ -3,10 +3,10 @@
 namespace Incomaker\Api\Controller;
 
 //connection timeout in seconds
-const CONNECTION_TIMEOUT = 1;
+const CONNECTION_TIMEOUT = 3;
 
 //API call timeout in seconds
-const OPERATION_TIMEOUT = 3;
+const OPERATION_TIMEOUT = 5;
 
 class Controller {
 
@@ -44,9 +44,6 @@ class Controller {
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
 		$response = curl_exec($ch);
 
-		$info = curl_getinfo($ch);
-		print_r($info['request_header']);
-		
 		$curlErrno = curl_errno($ch);
 		curl_close($ch);
 		if ($curlErrno != 0) {
