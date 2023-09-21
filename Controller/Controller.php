@@ -43,6 +43,10 @@ class Controller {
 	private function finishQuery($ch) {
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
 		$response = curl_exec($ch);
+
+		$info = curl_getinfo($ch);
+		print_r($info['request_header']);
+		
 		$curlErrno = curl_errno($ch);
 		curl_close($ch);
 		if ($curlErrno != 0) {
