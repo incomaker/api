@@ -3,7 +3,6 @@
 namespace Incomaker\Api\Data;
 
 use DateTime;
-use DateTimeInterface;
 
 /**
  * Description of Event
@@ -25,8 +24,8 @@ class Event {
 	/**
 	 * Create generic object
 	 * @param mixed $name event name
-	 * @param DateTime|null $permId //cookie incomaker_p
-	 * @param mixed $time Time of the event. Optional.
+	 * @param mixed $permId //cookie incomaker_p
+	 * @param DateTime|null $time Time of the event. Optional.
 	 */
 	function __construct(mixed $name, mixed $permId = null, mixed $time = null) {
 		$this->name = $name;
@@ -41,7 +40,7 @@ class Event {
 			$arrayData["permId"] = $this->permId;
 		}
 		if (!is_null($this->time)) {
-			$arrayData["time"] = $this->time->format(DateTimeInterface::ISO8601_EXPANDED);
+			$arrayData["time"] = $this->time->format("c");
 		}
 		if (!is_null($this->campaignId)) {
 			$arrayData["campaignId"] = $this->campaignId;
