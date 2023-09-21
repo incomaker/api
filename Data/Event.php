@@ -27,7 +27,7 @@ class Event {
 	 * @param mixed $permId //cookie incomaker_p
 	 * @param DateTime|null $time Time of the event. Optional.
 	 */
-	function __construct(mixed $name, mixed $permId = null, mixed $time = null) {
+	function __construct($name, $permId = null, $time = null) {
 		$this->name = $name;
 		$this->permId = $permId;
 		$this->time = $time;
