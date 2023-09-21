@@ -21,12 +21,14 @@ class Event {
 
 	/**
 	 * Create generic object
-	 * @param $name event name
-	 * @param $permId //cookie incomaker_p
+	 * @param mixed $name event name
+	 * @param mixed $permId //cookie incomaker_p
+	 * @param mixed $time Time of the event. Optional.
 	 */
-	function __construct($name, $permId = null) {
+	function __construct(mixed $name, mixed $permId = null, mixed $time = null) {
 		$this->name = $name;
-		if ($permId != null) $this->permId = $permId;
+		$this->permId = $permId;
+		$this->time = $time;
 	}
 
 	public function getData() {
@@ -34,6 +36,9 @@ class Event {
 
 		if (!is_null($this->permId)) {
 			$arrayData["permId"] = $this->permId;
+		}
+		if (!is_null($this->time)) {
+			$arrayData["time"] = $this->time;
 		}
 		if (!is_null($this->campaignId)) {
 			$arrayData["campaignId"] = $this->campaignId;
@@ -52,9 +57,6 @@ class Event {
 		}
 		if (!is_null($this->name)) {
 			$arrayData["name"] = $this->name;
-		}
-		if (!is_null($this->time)) {
-			$arrayData["time"] = $this->time;
 		}
 		if (!is_null($this->sessionId)) {
 			$arrayData["sessionId"] = strval($this->sessionId);
