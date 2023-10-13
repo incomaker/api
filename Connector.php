@@ -13,6 +13,7 @@ use Incomaker\Api\Controller\SegmentController;
 
 class Connector {
 
+	const INCOMAKER_ENABLED = "INCOMAKER_ENABLED";
 	const INCOMAKER_API_KEY = "INCOMAKER_API_KEY";
 	const INCOMAKER_ACCOUNT_ID = "INCOMAKER_ACCOUNT_ID";
 	const INCOMAKER_PLUGIN_ID = "INCOMAKER_PLUGIN_ID";
