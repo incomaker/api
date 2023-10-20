@@ -21,7 +21,6 @@ class Connector {
 
 	/**
 	 * Incomaker API endpoint
-	 * @version 3.1.0
 	 *
 	 * @var string
 	 */
