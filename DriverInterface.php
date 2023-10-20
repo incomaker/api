@@ -1,9 +1,13 @@
 <?php
+
 namespace Incomaker\Api;
 
-interface DriverInterface
-{
-    public function getSetting($key);
+interface DriverInterface {
 
-    public function updateSetting($key, $value);
+	public function getSetting($key);
+
+	public function updateSetting($key, $value);
+
+	public function isModuleEnabled();
+
 }

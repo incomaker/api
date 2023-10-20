@@ -2,6 +2,8 @@
 
 namespace Incomaker\Api\Controller;
 
+use Incomaker\Api\Data\PluginInfo;
+
 /**
  * Description of PluginController
  */
@@ -68,4 +70,16 @@ class PluginController extends Controller {
         return $this->curlGetQuery("plugin/id/");
     }
 
+    /**
+     * @return Object Account UUID and Plugin UUID associated with current API key.
+     *
+     *     json object struct:
+     *  {
+     *      accountUuid;
+     *      pluginUuid;
+     *  }
+     */
+    public function getInfo() {
+        return $this->curlGetQuery("plugin/info/");
+    }
 }
