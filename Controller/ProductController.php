@@ -72,7 +72,7 @@ class ProductController extends Controller {
 	 * @return response
 	 */
 	public function deleteProduct($id) {
-		return $this->curlDeleteQuery(sprintf("product/%s", $this->apiKey), sprintf("?productId=%s", $id));
+		return $this->curlDeleteQuery("product/", sprintf("?productId=%s", $id));
 	}
 
 }
